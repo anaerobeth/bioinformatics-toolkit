@@ -1,0 +1,67 @@
+<?php 
+/*
+$str = "MNYHSTNVNEIWDACLRILQDIVDERAYRTWFLPIIPVSIEGDTLTLQVPSQFFCEFLEGNFVEQLRTVL
+GRVIGPNASLQYNALVDNSSPKYPGTVTLAGCADGGQAAEQFDVNLLHRHMPNAATHSEAQDFDTQLNSR
+LNFRNFYQSECNYVARSVAEAIAASPGNTPMNPFFIYGASGVGKTHLCHALGLRVREMHPRLKVLYVSSH
+LFEMQFTTAARMGTINDFIAFYQQVDVLIIDDIQWLIGKKKTQLAFFQVFNHLYMLGKQIVLTSDKPPVD
+LNGMEERLVTRMAGATCVKIERPDLKLRREILQQRTLQSGVRLDESVLNFIAENVCDNVRELEGTLVSLI
+TNSVVVGKEIDLTFAKRIVRQAVRLEKKEVTIECIQQAVSRVFQVQIEQMKSKSRKQDIVQARQVVMFLS
+KKHTAQSLSAIGELMGGRNHATVLHGCRCVTNEMEMNASFRSSVERAEQLIAN";
+*/
+
+
+
+$con = mysql_connect("localhost","root","root");
+if (!$con)
+  {
+  die('Could not connect: ' . mysql_error());
+  }
+
+mysql_select_db("hulab", $con);
+//$result = mysql_query("SELECT * FROM `taloci`");
+
+$result = mysql_query("SELECT * FROM `testw83aa`");
+while($r[]=mysql_fetch_assoc($result));
+
+$new = array();
+
+foreach ($k as $v){
+	$str = $row[`sequence`];
+	}
+//loop through each to grab sequence data 
+//explode it 
+//analyze for CXXC -- count if 3 per word , ex: CSK since next word starts with C
+//tally count and insert into `count` column of same table
+
+$words = explode('C',$str);
+foreach ($words as $word) {
+    mysql_query("INSERT INTO `cxxcloci` (word) VALUES ('C$word')");
+	}
+	
+/*foreach($iterator as $value){
+  echo $value."<br />";
+  if($value==6){
+    $allValues=array(2,3);
+    echo "I modified source array!<br />";
+  }
+} 
+
+*/
+
+/*
+echo "done";
+mysql_close($con);
+
+// explode it
+$words = explode('C',$str);
+$count = 0;
+foreach ($words as $word) {
+    if (strlen($word) == 2) {
+    echo 'C' . $word 'C';
+    $count++;
+    }
+}
+echo $count;
+*/
+
+?>
