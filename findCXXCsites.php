@@ -1,4 +1,4 @@
-<!-- This program generates a heatmap of esential genes in bacterial genome arranged according to gene number
+<!-- This program looks for CXXC motif in a bacterial protein sequence (implemented using PHP and MySQL)
 
 Copyright 2012 Elizabeth Tenorio
 
